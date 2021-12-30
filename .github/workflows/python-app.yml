@@ -37,3 +37,11 @@ jobs:
       run: |
         export PYTHONPATH=src
         pytest
+    - name: Copying the war file to Server
+      uses: easingthemes/ssh-deploy@main
+      env:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+          SOURCE: "requirements.txt"
+          REMOTE_HOST: 54.243.14.24
+          REMOTE_USER: ubuntu
+          TARGET: /home/ubuntu 
