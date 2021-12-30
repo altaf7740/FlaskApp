@@ -35,6 +35,3 @@ jobs:
       run: |
         export PYTHONPATH=src
         pytest
-    - name: finding actual time
-      run : date
-	
